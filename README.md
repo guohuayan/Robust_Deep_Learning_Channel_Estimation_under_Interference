@@ -46,9 +46,9 @@ Pls first run "Fig15_combine_dataset.m" to get the channel for online training. 
 
 ## Note
 You may cite us by   
-@ARTICLE{10132590,
-  author={Guo, Huayan and Lau, Vincent K. N.},
+@ARTICLE{10132590, 
+  author={Guo, Huayan and Lau, Vincent K. N.}, 
   journal={IEEE Journal on Selected Areas in Communications}, 
-  title={Robust Deep Learning for Uplink Channel Estimation in Cellular Network under Inter-Cell Interference}, 
-  year={Early Access, DOI:10.1109/JSAC.2023.3276765}
+  title={Robust Deep Learning for Uplink Channel Estimation in Cellular Network under Inter-Cell Interference},  
+  year={Early Access, DOI:10.1109/JSAC.2023.3276765} 
 }
