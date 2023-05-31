@@ -1,10 +1,10 @@
 ## Robust Deep Learning for Channel Estimation under Interference
 
-This repository contains the source codes of the paper ``URobust Deep Learning for Uplink Channel Estimation in Cellular Network under Inter-Cell Interference'' which is published in IEEE Journal on Selected Areas in Communications (see <https://ieeexplore.ieee.org/abstract/document/10132590>).
+This repository contains the source codes of the paper ``Robust Deep Learning for Uplink Channel Estimation in Cellular Network under Inter-Cell Interference'' which is published in IEEE Journal on Selected Areas in Communications (see <https://ieeexplore.ieee.org/abstract/document/10132590>).
 
 In the paper, we propose a robust deep-learning-based channel estimation solution under inter-cell interference. The proposed DNN is a cascade of a model-based VBI-DNN module and a model-free Denoising Sparse Autoencoder (DSAE) DNN module, such that the time-varying ICI covariance is addressed. 
 
-<img src="./propose_dnn.jpg" height="200" width="100%" >
+<img src="./propose_dnn.jpg" height="300" width="100%" >
 
 
 
@@ -19,6 +19,7 @@ Run the files ``Fig13_plot.m'' and "Fig15_plot.m". You may get Fig.13 and Fig.15
 + (Baseline 2)``Fig13_baseline_lasso.m'': Modified LASSO
 + (Baseline 3)``Fig13_baseline_vamp.m'':  VAMP
 + (Baseline 4)``Fig13_vbi_pretrain.m'': GD-LMMSE
+
 ++++++++
 + (Proposed)``Fig13_vbi_pretrain.m'': S-VBI
 + (Proposed)``Fig13_offline_no_VBI_test.py'': S-DSAE
@@ -36,6 +37,7 @@ Pls first run "Fig15_combine_dataset.m" to get the channel for online training. 
 + (Baseline 3)``Fig15_baseline_vamp.m'':  VAMP
 + (Baseline 4)``Fig15_genie_LMMSE.m'': GD-LMMSE
 + (Baseline 5)``Fig15_no_VBI_test_ici_sinr.py'': S-DSAE (offline)
+
 ++++++++
 + (Proposed)``Fig15_online_test_sinr.py'': S-VBI (offline), S-VBI (online), Proposed (offline), Proposed (online)
 
