@@ -1,0 +1,19 @@
+function [A_LoS,A_NLoS] = polar_correlation(Xi_rx,Xi_tx,XPR)
+    A_LoS=zeros(2,2);
+    Par1=cosd(Xi_rx(1)+Xi_tx(1));
+    Par2=cosd(Xi_rx(2)+Xi_tx(1));
+    A_LoS(1,1)=Par1^2;
+    A_LoS(2,2)=Par2^2;
+    A_LoS(1,2)=Par1*Par2;
+    A_LoS(2,1)=A_LoS(1,2);
+    A_NLoS=zeros(2,2);
+    cross=sqrt(1/XPR);
+    Par1=[cosd(Xi_rx(1))*cosd(Xi_tx(1)),cross*cosd(Xi_rx(1))*sind(Xi_tx(1)),...
+        cross*sind(Xi_rx(1))*cosd(Xi_tx(1)),sind(Xi_rx(1))*sind(Xi_tx(1))];
+    Par2=[cosd(Xi_rx(2))*cosd(Xi_tx(1)),cross*cosd(Xi_rx(2))*sind(Xi_tx(1)),...
+        cross*sind(Xi_rx(2))*cosd(Xi_tx(1)),sind(Xi_rx(2))*sind(Xi_tx(1))];
+    A_NLoS(1,1)=sum(Par1.^2);
+    A_NLoS(2,2)=sum(Par2.^2);
+    A_NLoS(1,2)=sum(Par1.*Par2);
+    A_NLoS(2,1)=A_NLoS(1,2);
+end

@@ -1,0 +1,34 @@
+%% Setup:
+CNN_training_para.m: Generate global model paramters for the system
+dmrs_generate_user_location.m: Generate user locations for test
+
+%% Generate Training Channel (The output of these files needs to be sent to the python part)
+training_generate_channel_cdl.m: Generate training set with all CDL models and random user locations
+training_generate_channel_cdl_withoutB.m: Generate training set with all CDL models except CDL-B and random user locations
+dmrs_generate_channel_cdl.m: Generate channel for the testing and online training
+dmrs_generate_batch_dataset.m: package the batch as cell for testing and online training
+
+%% Channel statistic (The output of these files needs to be sent to the python part)
+train_channel_mixcdl_analyze_cov.m: anlysis the common spatial covariance of the home channel for the traininig dataset
+train_channel_mixcdl_post.m: summarize the common spatial covariance and support of the home channel for the traininig dataset
+dmrs_channel_home_cdl_cov.m: anlysis the spatial covariance in each tap of the home channel for the test dataset
+
+%% Channel estimation on ICI-free testing set
+mix_dmrs_test_vbi_pretrain.m: testing loss of module A
+mix_dmrs_test_plot.m: plot CE result on the CDL model (The result of other two lines are from python)
+
+%% Channel estimation ICI case
+dmrs_test_ici_LMMSE.m: LMMSE estimator for ICI testing
+dmrs_test_ici_offline_vbi.m: Module-A with offline training for ICI testing
+dmrs_test_ici_online_convergence_plot.m: plot the NMSE for the online iterations
+dmrs_plot_ce_ici.m: plot CE for ICI existing case
+
+
+%% BLER sim
+dmrs_BLER_baseline_preprocess.m: Preprocess the channel with ZF filter
+dmrs_BLER_baseline_postprocess.m: Load the DNN output and do channel interpolation for baseline
+dmrs_BLER_batch_ici_exist_baseline.m: BLER simulation for baseline
+dmrs_BLER_batch_ici_exist_LMMSE.m: BLER simulation for LMMSE
+dmrs_BLER_proposed_postprocess.m: Load the DNN output and do channel interpolation for proposed solution
+dmrs_BLER_batch_ici_exist_proposed.m: BLER simulation for proposed solution
+dmrs_BLER_batch_plot.m: plot the simulation result for BLER
